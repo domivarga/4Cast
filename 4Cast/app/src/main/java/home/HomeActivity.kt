@@ -1,25 +1,27 @@
-package com.example.a4cast.view
+package home
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
-import android.view.MenuItem
 import com.example.a4cast.R
-
 import kotlinx.android.synthetic.main.activity_main.*
+import repository.Weather
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), HomeContract.HomeView {
+
+    private var presenter: HomeContract.HomePresenter = HomePresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+
+        presenter.onViewCreated()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
+    override fun displayWeatherData(weather: Weather) {
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+
+        // Display weather data.
     }
 
 }
