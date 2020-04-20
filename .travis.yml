@@ -16,7 +16,7 @@ android:
 
 before_install:
   - yes | sdkmanager "platforms;android-28"
-  - chmod +x gradlew
+  - chmod +x 4Cast/gradlew
 
 deploy:
   provider: releases
@@ -26,7 +26,7 @@ deploy:
   on:
     tags: true
 
-script: ./gradlew :app:build
+script: ./4Cast/gradlew :app:build
 
 env:
   global:
