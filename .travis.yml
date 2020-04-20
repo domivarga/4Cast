@@ -16,17 +16,17 @@ android:
 
 before_install:
   - yes | sdkmanager "platforms;android-28"
-  - chmod +x 4Cast/gradlew
+  - chmod +x gradlew
 
 deploy:
   provider: releases
   apikey: $GITHUB_KEY
-  file: 4Cast/app/build/outputs/apk/release/app-release.apk
+  file: app/build/outputs/apk/release/app-release.apk
   skip_cleanup: true
   on:
     tags: true
 
-script: ./4Cast/gradlew :4Cast:app:build
+script: ./gradlew :app:build
 
 env:
   global:
