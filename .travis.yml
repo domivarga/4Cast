@@ -21,12 +21,12 @@ before_install:
 deploy:
   provider: releases
   apikey: $GITHUB_KEY
-  file: app/build/outputs/apk/release/app-release.apk
+  file: 4Cast/app/build/outputs/apk/release/app-release.apk
   skip_cleanup: true
   on:
     tags: true
 
-script: ./4Cast/gradlew :app:build
+script: ./4Cast/gradlew :4Cast:app:build
 
 env:
   global:
