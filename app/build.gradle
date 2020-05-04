@@ -62,8 +62,8 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.2.0'
 
     // Room
-    implementation "android.arch.persistence.room:runtime:1.1.1"
-    kapt "android.arch.persistence.room:compiler:1.1.1"
+    implementation "android.arch.persistence.room:runtime:2.2.5"
+    kapt "android.arch.persistence.room:compiler:2.2.5"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

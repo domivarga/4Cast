@@ -2,10 +2,10 @@ package com.example.a4cast.ui.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.StrictMode
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a4cast.R
+import com.example.a4cast.database.CityDataBaseImp
 import com.example.a4cast.injector
 import kotlinx.android.synthetic.main.activity_main.*
 import com.example.a4cast.model.WeatherDTO
@@ -13,6 +13,9 @@ import com.example.a4cast.ui.detail.DetailActivity
 import javax.inject.Inject
 
 class HomeActivity : AppCompatActivity(), HomeScreen {
+    companion object {
+        var database: CityDataBaseImp? = null
+    }
 
     @Inject
     lateinit var homePresenter: HomePresenter
@@ -22,6 +25,7 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         injector.inject(this)
+        HomeActivity.database = CityDataBaseImp(this)
     }
 
     override fun onStart() {
@@ -32,7 +36,7 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
 
     override fun displayWeatherData(weatherDTO: WeatherDTO) {
         // Display weather data.
-        Log.d("xxx NAME", weatherDTO.name)
+        Log.d("xxx NAME", weatherDTO.city)
         Log.d("xxx HUMIDITY", weatherDTO.hum)
         Log.d("xxx TEMP", weatherDTO.temp)
     }
