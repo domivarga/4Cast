@@ -27,7 +27,7 @@ class HomePresenter @Inject constructor(private val weatherInteractor: WeatherIn
 
     private fun loadWeather() {
         val cities = weatherInteractor.getCities()
-        Log.d("CITIES", "$cities")
+        Log.d("*** CITIES", "$cities")
 
         executor.execute {
             weatherInteractor.downloadWeatherData("Budapest")
@@ -42,7 +42,7 @@ class HomePresenter @Inject constructor(private val weatherInteractor: WeatherIn
             if (screen != null) {
                 if (event.weather != null) {
 
-                    weatherInteractor.saveCity(City(event.weather!!.main.temp.toString(), true))
+                    weatherInteractor.saveCity(City(event.weather!!.name, true))
 
                     screen?.displayWeatherData(
                         WeatherDTO(

@@ -33,9 +33,9 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
 
     override fun displayWeatherData(weatherDTO: WeatherDTO) {
         // Display weather data.
-        Log.d("xxx NAME", weatherDTO.city)
-        Log.d("xxx HUMIDITY", weatherDTO.hum)
-        Log.d("xxx TEMP", weatherDTO.temp)
+        Log.d("*** NAME", weatherDTO.city)
+        Log.d("*** HUMIDITY", weatherDTO.hum)
+        Log.d("*** TEMP", weatherDTO.temp)
     }
 
     private fun navigate() {
