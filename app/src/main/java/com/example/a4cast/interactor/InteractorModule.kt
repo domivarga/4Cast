@@ -1,5 +1,6 @@
 package com.example.a4cast.interactor
 
+import com.example.a4cast.database.DataBase
 import dagger.Module
 import dagger.Provides
 import com.example.a4cast.interactor.weather.WeatherInteractor
@@ -10,5 +11,5 @@ import javax.inject.Singleton
 class InteractorModule {
     @Provides
     @Singleton
-    fun provideWeatherInteractor(weatherApi: WeatherApi) = WeatherInteractor(weatherApi)
+    fun provideWeatherInteractor(weatherApi: WeatherApi, dataBase: DataBase) = WeatherInteractor(weatherApi, dataBase)
 }

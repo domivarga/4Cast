@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class NetworkModule {
     @Provides
     @Singleton
-    fun provideArtistsApi(): WeatherApi {
+    fun provideWeatherApi(): WeatherApi {
         val retrofit = Retrofit.Builder()
             .baseUrl(NetworkConfig.API_ENDPOINT_ADDRESS)
             .addConverterFactory(GsonConverterFactory.create())

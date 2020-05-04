@@ -13,9 +13,6 @@ import com.example.a4cast.ui.detail.DetailActivity
 import javax.inject.Inject
 
 class HomeActivity : AppCompatActivity(), HomeScreen {
-    companion object {
-        var database: CityDataBaseImp? = null
-    }
 
     @Inject
     lateinit var homePresenter: HomePresenter
@@ -25,7 +22,7 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         injector.inject(this)
-        HomeActivity.database = CityDataBaseImp(this)
+        homePresenter.attachScreen(this)
     }
 
     override fun onStart() {

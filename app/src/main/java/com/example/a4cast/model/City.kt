@@ -4,9 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class City(
-    @PrimaryKey
-    val id: String,
-    val name: String,
-    val isFavourite: Boolean
-)
+data class City(val name: String, val isFavourite: Boolean) {
+    @PrimaryKey(autoGenerate = true)
+    var id: Integer? = null
+}

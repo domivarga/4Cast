@@ -14,13 +14,10 @@ class CityDataBaseImp(context: Context) : DataBase {
             "CityRoomDataBase.db")
             .allowMainThreadQueries()
             .build()
-        cityDao = database.getFavouriteCityDAO()
+        cityDao = database.cityDao()
     }
 
-    override fun getFavourites(result: (cities: List<City>) -> Unit) {
-        val cities = cityDao.getFavouriteCities()
-        if (cities.isNotEmpty()) result.invoke(cities)
-    }
+    override fun getFavourites() = cityDao.getFavouriteCities()
 
     override fun getCity(cityId: String): City = cityDao.getCity(cityId)
 

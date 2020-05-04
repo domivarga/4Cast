@@ -6,6 +6,7 @@ import dagger.Provides
 import com.example.a4cast.ui.detail.DetailPresenter
 import com.example.a4cast.ui.home.HomePresenter
 import com.example.a4cast.interactor.weather.WeatherInteractor
+import java.util.concurrent.Executor
 import java.util.concurrent.Executors
 import javax.inject.Singleton
 
@@ -16,15 +17,15 @@ class UIModule(private val context: Context) {
 
     @Provides
     @Singleton
-    fun provideNetworkExecutor() = Executors.newFixedThreadPool(1)
+    fun provideNetworkExecutor(): Executor = Executors.newFixedThreadPool(1)
 
     @Provides
     @Singleton
-    fun provideHomePresenter(weatherInteractor: WeatherInteractor) =
-        HomePresenter(weatherInteractor)
+    fun provideHomePresenter(weatherInteractor: WeatherInteractor, executor: Executor) =
+        HomePresenter(weatherInteractor, executor)
 
     @Provides
     @Singleton
-    fun provideDetailPresenter(weatherInteractor: WeatherInteractor) =
-        DetailPresenter(weatherInteractor)
+    fun provideDetailPresenter(weatherInteractor: WeatherInteractor, executor: Executor) =
+        DetailPresenter(weatherInteractor, executor)
 }
