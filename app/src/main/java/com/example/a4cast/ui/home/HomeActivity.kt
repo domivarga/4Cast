@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.a4cast.R
 import com.example.a4cast.injector
 import kotlinx.android.synthetic.main.activity_main.*
-import com.example.a4cast.model.Weather
+import com.example.a4cast.model.WeatherDTO
 import com.example.a4cast.ui.detail.DetailActivity
 import javax.inject.Inject
 
@@ -23,7 +23,7 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
     }
 
 
-    override fun displayWeatherData(weather: Weather) {
+    override fun displayWeatherData(weatherDTO: WeatherDTO) {
         // Display weather data.
 
     }
