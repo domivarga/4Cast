@@ -1,7 +1,7 @@
 package com.example.a4cast.model
 
-data class Weather(
+data class WeatherDTO(
     val temp: String,
     val hum: String,
-    val date: String
+    val city: String
 )

@@ -1,7 +1,7 @@
 package com.example.a4cast.ui.home
 
-import com.example.a4cast.model.Weather
+import com.example.a4cast.model.WeatherDTO
 
 interface HomeScreen {
-    fun displayWeatherData(weather: Weather)
+    fun displayWeatherData(weatherDTO: WeatherDTO)
 }
