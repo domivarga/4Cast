@@ -1,5 +1,6 @@
 package com.example.a4cast
 import android.app.Application
+import com.example.a4cast.database.DatabaseModule
 import com.example.a4cast.ui.UIModule
 
 class ForecastApplication: Application() {
@@ -7,10 +8,12 @@ class ForecastApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        injector = DaggerForecastApplicationComponent.builder().uIModule(
-            UIModule(
-                (this)
+        injector = DaggerForecastApplicationComponent.builder()
+            .uIModule(
+                UIModule(
+                    (this)
+                )
             )
-        ).build()
+            .build()
     }
 }
