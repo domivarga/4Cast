@@ -2,6 +2,8 @@ package com.example.a4cast.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.StrictMode
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.a4cast.R
 import com.example.a4cast.injector
@@ -22,10 +24,17 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
         injector.inject(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        homePresenter.loadWeatherData()
+    }
 
     override fun displayWeatherData(weatherDTO: WeatherDTO) {
         // Display weather data.
-
+        Log.d("xxx NAME", weatherDTO.name)
+        Log.d("xxx HUMIDITY", weatherDTO.hum)
+        Log.d("xxx TEMP", weatherDTO.temp)
     }
 
     private fun navigate() {
