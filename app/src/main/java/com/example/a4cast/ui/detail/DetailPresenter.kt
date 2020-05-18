@@ -7,7 +7,6 @@ import javax.inject.Inject
 
 class DetailPresenter @Inject constructor(private val weatherInteractor: WeatherInteractor, private val executor: Executor): Presenter<DetailScreen>() {
     fun loadDetailData() {
-        // interactor call
         screen?.displayDetailData()
     }
 }

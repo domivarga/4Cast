@@ -23,7 +23,7 @@ class WeatherInteractor @Inject constructor(private var weatherApi: WeatherApi, 
         val event = GetWeatherEvent()
 
         try {
-            val weatherQueryCall = weatherApi.getWeatherData(city, NetworkConfig.API_KEY)
+            val weatherQueryCall = weatherApi.getWeatherData(city, "metric", NetworkConfig.API_KEY)
             val response = weatherQueryCall.execute()
             Log.d("Reponse", response.body().toString())
             if (response.code() != 200) {
