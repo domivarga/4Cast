@@ -4,4 +4,5 @@ import com.example.a4cast.model.WeatherDTO
 
 interface HomeScreen {
     fun displayWeatherData(weatherDTO: WeatherDTO)
+    fun showDetailedWeather(weatherDTO: WeatherDTO)
 }

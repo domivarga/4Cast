@@ -25,6 +25,10 @@ class HomePresenter @Inject constructor(private val weatherInteractor: WeatherIn
         loadWeather()
     }
 
+    fun showDetail(weather: WeatherDTO) {
+        screen?.showDetailedWeather(weather)
+    }
+
     private fun loadWeather() {
         val cities = weatherInteractor.getCities()
         Log.d("*** CITIES", "$cities")

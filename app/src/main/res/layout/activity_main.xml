@@ -18,6 +18,18 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+        <EditText
+            android:id="@+id/searchBar"
+            style="@style/TextAppearance.AppCompat.SearchResult.Title"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:backgroundTint="@color/searchBar"
+            android:imeOptions="actionSearch"
+            android:hint="City"
+            android:singleLine="true"
+            android:textColor="@color/searchBar" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
