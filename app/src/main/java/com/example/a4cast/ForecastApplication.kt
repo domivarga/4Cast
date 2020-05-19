@@ -8,6 +8,7 @@ class ForecastApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         injector = DaggerForecastApplicationComponent.builder()
             .uIModule(
                 UIModule(
