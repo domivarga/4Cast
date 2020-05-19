@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "294241043362",
+    "firebase_url": "https://cast-c4352.firebaseio.com",
+    "project_id": "cast-c4352",
+    "storage_bucket": "cast-c4352.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294241043362:android:8462d7ac85ad282ad068fb",
+        "android_client_info": {
+          "package_name": "com.example.a4cast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294241043362-epmem9g1b0oms58rd1alsmbh4vvluk2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCGqD0DCKoGyiDmVuqjMn-egaB-t6ftIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294241043362-epmem9g1b0oms58rd1alsmbh4vvluk2l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

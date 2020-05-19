@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a4cast.ForecastApplication
 import com.example.a4cast.R
 import com.example.a4cast.injector
 import com.example.a4cast.model.City
@@ -16,6 +17,10 @@ import com.example.a4cast.ui.detail.DetailActivity
 import com.example.a4cast.ui.home.NavigationKeys.KEY_HUMIDITY
 import com.example.a4cast.ui.home.NavigationKeys.KEY_NAME
 import com.example.a4cast.ui.home.NavigationKeys.KEY_TEMPERATURE
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -29,6 +34,7 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
     private lateinit var listView: ListView
     private lateinit var arrayAdapter: ArrayAdapter<String?>
     private lateinit var historyItems: List<City>
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -40,6 +46,10 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
 
         setupSearchBar()
         setupListView()
+
+        firebaseAnalytics = Firebase.analytics
+
+        throw RuntimeException("test")
     }
 
     override fun onStart() {
@@ -48,6 +58,12 @@ class HomeActivity : AppCompatActivity(), HomeScreen {
 
     override fun displayWeatherData(weatherDTO: WeatherDTO) {
         navigateToDetails(weatherDTO)
+
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, "001")
+            param(FirebaseAnalytics.Param.ITEM_NAME, "Screen Change")
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "Open details screen")
+        }
     }
 
     override fun showDetailedWeather(weatherDTO: WeatherDTO) {
